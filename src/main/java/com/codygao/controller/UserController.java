@@ -32,7 +32,7 @@ public class UserController {
     }
 
     @RequestMapping("findUserByName")
-    public User findUserByName(@RequestParam("name") @NotEmpty(message = "name不能为空哦") String name) {
+    public User findUserByName(@Validated @RequestParam("name") String name) {
         return userService.findUserByName(name);
     }
 }
