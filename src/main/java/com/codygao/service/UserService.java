@@ -19,7 +19,15 @@ public class UserService {
         return userDao.findAllUser();
     }
 
-    public void insertUser() {
-        userDao.insertUser("SnailClimb", 22, 3000.0);
+    public void insertUser(String name, Integer age, double money) {
+        userDao.insertUser(name, age, money);
+    }
+
+    public User getUserByid(Integer id) {
+        return userDao.getUserById(id);
+    }
+
+    public User findUserByName(String name) {
+        return userDao.findUserByName(name);
     }
 }

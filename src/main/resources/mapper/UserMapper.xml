@@ -5,7 +5,7 @@
 <mapper namespace="com.codygao.dao.UserDao">
 
     <select id="findUserByName" parameterType="String" resultType="com.codygao.bean.User">
-        SELECT * FROM user WHERE name = #{name}
+        SELECT * FROM user WHERE name = #{name} LIMIT 1
     </select>
 
 </mapper>

@@ -24,4 +24,9 @@ public interface UserDao {
      */
     @Insert("INSERT INTO user(name, age,money) VALUES(#{name}, #{age}, #{money})")
     void insertUser(@Param("name") String name, @Param("age") Integer age, @Param("money") Double money);
+
+    @Select("SELECT  * FROM user WHERE id= #{id} ")
+    User getUserById(@Param("id") Integer id);
+
+    User findUserByName(@Param("name") String name);
 }
