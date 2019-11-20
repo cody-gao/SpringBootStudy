@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -32,7 +33,8 @@ public class UserController {
     }
 
     @RequestMapping("findUserByName")
-    public User findUserByName(@Validated @RequestParam("name") String name) {
+    @Valid
+    public User findUserByName(@RequestParam("name") String name) {
         return userService.findUserByName(name);
     }
 }
